@@ -55,6 +55,38 @@ export default function CoursePage() {
         </div>
       </header>
 
+      <section className="course-benefits" aria-labelledby="benefits-title">
+        <h2 id="benefits-title" className="section-title">
+          Чему вы научитесь
+        </h2>
+        <div className="course-benefits__grid">
+          <div className="course-benefit">
+            <span className="course-benefit__icon" aria-hidden="true">🧠</span>
+            <p className="course-benefit__text">Мышлению: разбивать задачи на шаги</p>
+          </div>
+          <div className="course-benefit">
+            <span className="course-benefit__icon" aria-hidden="true">📦</span>
+            <p className="course-benefit__text">Работать с переменными и данными</p>
+          </div>
+          <div className="course-benefit">
+            <span className="course-benefit__icon" aria-hidden="true">🔀</span>
+            <p className="course-benefit__text">Управлять логикой через условия</p>
+          </div>
+          <div className="course-benefit">
+            <span className="course-benefit__icon" aria-hidden="true">🔁</span>
+            <p className="course-benefit__text">Повторять действия циклами</p>
+          </div>
+          <div className="course-benefit">
+            <span className="course-benefit__icon" aria-hidden="true">🧩</span>
+            <p className="course-benefit__text">Писать функции и переиспользовать код</p>
+          </div>
+          <div className="course-benefit">
+            <span className="course-benefit__icon" aria-hidden="true">🎮</span>
+            <p className="course-benefit__text">Создавать логику мини-игр</p>
+          </div>
+        </div>
+      </section>
+
       <section className="course-page__summary" aria-label="Прогресс курса">
         <ProgressBar value={doneTotal} max={TOTAL_COURSE_TASKS} label="Решено заданий" />
         <p className="course-page__summary-note">Общий процент: {percent}%</p>

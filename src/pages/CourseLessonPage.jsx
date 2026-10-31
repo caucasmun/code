@@ -146,9 +146,15 @@ export default function CourseLessonPage() {
         )}
 
         {nextLesson ? (
-          <Link to={`/course/${nextLesson.slug}`} className="button button--primary">
-            Урок {nextLesson.number}: {nextLesson.title} →
-          </Link>
+          lessonDone >= lesson.practice.length ? (
+            <Link to={`/course/${nextLesson.slug}`} className="button button--primary">
+              Урок {nextLesson.number}: {nextLesson.title} →
+            </Link>
+          ) : (
+            <button type="button" className="button button--primary" disabled aria-disabled="true">
+              Урок {nextLesson.number}: {nextLesson.title} →
+            </button>
+          )
         ) : (
           <Link to="/games" className="button button--primary">
             Перейти к играм →

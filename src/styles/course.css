@@ -1,6 +1,40 @@
 /* ------------------------------------------------------------------ */
+/* Преимущества курса                                                  */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
 /* Вводный курс по JavaScript                                          */
 /* ------------------------------------------------------------------ */
+
+.course-benefits {
+  margin-bottom: var(--space-xl);
+}
+
+.course-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.course-benefit {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+}
+
+.course-benefit__icon {
+  font-size: 1.5rem;
+}
+
+.course-benefit__text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
 
 .course-page {
   max-width: 1000px;

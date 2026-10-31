@@ -94,6 +94,15 @@
   overflow-wrap: break-word;
 }
 
+.hero__lead {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 750px;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+}
+
 @media (max-width: 359px) {
   .hero-title {
     white-space: normal;
