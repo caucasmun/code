@@ -1,4 +1,4 @@
-/* ------------------------------------------------------------------ */
+﻿/* ------------------------------------------------------------------ */
 /* Главная страница                                                    */
 /* ------------------------------------------------------------------ */
 
@@ -87,8 +87,11 @@
   font-size: clamp(1rem, 2.2vw, 1.125rem);
   line-height: 1.6;
   color: var(--text-secondary);
-  max-width: 60ch;
-  margin: 0;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 359px) {
