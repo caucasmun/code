@@ -1,3 +1,9 @@
+﻿import { lesson0Launch } from './lesson0Launch';
+import { lesson0Console } from './lesson0Console';
+import { lesson0Return } from './lesson0Return';
+import { lesson0Function } from './lesson0Function';
+import { lesson0If } from './lesson0If';
+import { lesson0For } from './lesson0For';
 import { lessonProgramming } from './lessonProgramming';
 import { lessonBasics } from './lessonBasics';
 import { lessonVariables } from './lessonVariables';
@@ -15,6 +21,12 @@ import { lessonGameLogic } from './lessonGameLogic';
  * с автопроверкой через тест-кейсы.
  */
 export const courseLessons = [
+  lesson0Launch,
+  lesson0Console,
+  lesson0Return,
+  lesson0Function,
+  lesson0If,
+  lesson0For,
   lessonProgramming,
   lessonBasics,
   lessonVariables,
