@@ -1,10 +1,10 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../features/auth/authSlice';
 
 /**
- * Общая оболочка приложения: шапка с навигацией, содержимое и подвал.
+ * РћР±С‰Р°СЏ РѕР±РѕР»РѕС‡РєР° РїСЂРёР»РѕР¶РµРЅРёСЏ: С€Р°РїРєР° СЃ РЅР°РІРёРіР°С†РёРµР№, СЃРѕРґРµСЂР¶РёРјРѕРµ Рё РїРѕРґРІР°Р».
  */
 export default function Layout({ children }) {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ export default function Layout({ children }) {
     try {
       localStorage.setItem('theme', next);
     } catch (error) {
-      // Игнорируем недоступность localStorage.
+      // РРіРЅРѕСЂРёСЂСѓРµРј РЅРµРґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊ localStorage.
     }
   };
 
@@ -40,7 +40,7 @@ export default function Layout({ children }) {
             <span className="layout__logo-mark" aria-hidden="true">
               {'</>'}
             </span>
-            <span>Код в игре</span>
+            <span>РљРѕРґ РІ РёРіСЂРµ</span>
           </Link>
 
           <button
@@ -48,7 +48,7 @@ export default function Layout({ children }) {
             className="layout__burger"
             aria-expanded={menuOpen}
             aria-controls="main-navigation"
-            aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
+            aria-label={menuOpen ? 'Р—Р°РєСЂС‹С‚СЊ РјРµРЅСЋ' : 'РћС‚РєСЂС‹С‚СЊ РјРµРЅСЋ'}
             onClick={() => setMenuOpen((value) => !value)}
           >
             <span aria-hidden="true" />
@@ -59,25 +59,31 @@ export default function Layout({ children }) {
           <nav
             id="main-navigation"
             className={`layout__nav ${menuOpen ? 'layout__nav--open' : ''}`.trim()}
-            aria-label="Основная навигация"
+            aria-label="РћСЃРЅРѕРІРЅР°СЏ РЅР°РІРёРіР°С†РёСЏ"
           >
             <NavLink to="/" end className="layout__link" onClick={closeMenu}>
-              Игры
+              РРіСЂС‹
             </NavLink>
             <NavLink to="/course" className="layout__link" onClick={closeMenu}>
-              Курс
+              РљСѓСЂСЃ
             </NavLink>
             <NavLink to="/progress" className="layout__link" onClick={closeMenu}>
-              Прогресс
+              РџСЂРѕРіСЂРµСЃСЃ
             </NavLink>
 
-            <button
+                        <button
               type="button"
-              className="button button--ghost button--small"
+              className={`theme-toggle ${theme === 'dark' ? 'theme-toggle--dark' : ''}`}
               onClick={toggleTheme}
+              role="switch"
+              aria-checked={theme === 'dark'}
               aria-label={theme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'}
             >
-              {theme === 'dark' ? '☀️' : '🌙'}
+              <span className="theme-toggle__track" aria-hidden="true">
+                <span className="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+                <span className="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+                <span className="theme-toggle__thumb" />
+              </span>
             </button>
 
             {user ? (
@@ -86,16 +92,16 @@ export default function Layout({ children }) {
                   {user.email}
                 </span>
                 <button type="button" className="button button--ghost" onClick={handleLogout}>
-                  Выйти
+                  Р’С‹Р№С‚Рё
                 </button>
               </>
             ) : (
               <>
                 <NavLink to="/login" className="layout__link" onClick={closeMenu}>
-                  Вход
+                  Р’С…РѕРґ
                 </NavLink>
                 <NavLink to="/register" className="button button--primary" onClick={closeMenu}>
-                  Регистрация
+                  Р РµРіРёСЃС‚СЂР°С†РёСЏ
                 </NavLink>
               </>
             )}
@@ -110,13 +116,15 @@ export default function Layout({ children }) {
       <footer className="layout__footer">
         <div className="container layout__footer-inner">
           <p>
-            «Код в игре» — учебный проект: изучение JavaScript через интерактивные мини-игры.
+            В«РљРѕРґ РІ РёРіСЂРµВ» вЂ” СѓС‡РµР±РЅС‹Р№ РїСЂРѕРµРєС‚: РёР·СѓС‡РµРЅРёРµ JavaScript С‡РµСЂРµР· РёРЅС‚РµСЂР°РєС‚РёРІРЅС‹Рµ РјРёРЅРё-РёРіСЂС‹.
           </p>
           <p className="layout__footer-note">
-            Данные аккаунта и прогресса хранятся только в вашем браузере.
+            Р”Р°РЅРЅС‹Рµ Р°РєРєР°СѓРЅС‚Р° Рё РїСЂРѕРіСЂРµСЃСЃР° С…СЂР°РЅСЏС‚СЃСЏ С‚РѕР»СЊРєРѕ РІ РІР°С€РµРј Р±СЂР°СѓР·РµСЂРµ.
           </p>
         </div>
       </footer>
     </div>
   );
 }
+
+
