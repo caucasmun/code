@@ -1,0 +1,260 @@
+/* ------------------------------------------------------------------ */
+/* Вводный курс по JavaScript                                          */
+/* ------------------------------------------------------------------ */
+
+.course-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.course-page__header {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.course-page__header--list {
+  text-align: left;
+}
+
+.course-page__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.course-page__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background-color: var(--accent-soft);
+  border-radius: var(--radius-large);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.course-page__eyebrow {
+  margin: 0 0 var(--space-xs);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.course-page__title {
+  margin-bottom: var(--space-xs);
+}
+
+.course-page__subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.course-page__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.course-page__intro {
+  max-width: 760px;
+  margin-bottom: var(--space-xl);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.course-page__summary {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+.course-page__summary .progress-bar {
+  margin-bottom: var(--space-sm);
+}
+
+.course-page__summary-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.course-page__theory,
+.course-page__practice {
+  margin-bottom: var(--space-2xl);
+}
+
+.course-page__navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.course-page__navigation .button {
+  max-width: 100%;
+}
+
+/* ------------------------------------------------------------------ */
+/* Список уроков                                                       */
+/* ------------------------------------------------------------------ */
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-list__item {
+  display: block;
+}
+
+.course-card {
+  display: block;
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  transition: border-color var(--transition), transform var(--transition),
+    background-color var(--transition);
+}
+
+.course-card:hover {
+  border-color: var(--accent);
+  background-color: var(--bg-elevated);
+  transform: translateY(-2px);
+}
+
+.course-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.course-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  background-color: var(--accent-soft);
+  border-radius: var(--radius);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.course-card__heading {
+  min-width: 0;
+  flex: 1;
+}
+
+.course-card__number {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.course-card__title {
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+.course-card__title a {
+  color: var(--text-strong);
+}
+
+.course-card__title a:hover {
+  color: var(--accent);
+}
+
+.course-card__subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.course-card__intro {
+  margin-bottom: var(--space-md);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.course-card__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Теоретические блоки урока                                           */
+/* ------------------------------------------------------------------ */
+
+.course-block {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+.course-block:last-child {
+  margin-bottom: 0;
+}
+
+.course-block__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 17px;
+}
+
+.course-block__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  background-color: var(--accent-soft);
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.course-block__text {
+  margin-bottom: var(--space-md);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.course-block__text:last-child {
+  margin-bottom: 0;
+}

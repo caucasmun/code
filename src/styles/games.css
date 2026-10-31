@@ -1,0 +1,535 @@
+/* ------------------------------------------------------------------ */
+/* Общая рамка игр                                                    */
+/* ------------------------------------------------------------------ */
+
+.game {
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+/* Каждая игра занимает одинаковую ширину, чтобы страница выглядела ровно. */
+.game--guess-number,
+.game--hangman,
+.game--rps,
+.game--snake,
+.game--tic-tac-toe {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.game__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.game__panel > .alert,
+.game__panel > .game__hint-text {
+  width: 100%;
+}
+
+.game__hint-text {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.game__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  width: 100%;
+}
+
+.game__input {
+  width: auto;
+  min-width: 200px;
+  flex: 1;
+  max-width: 320px;
+}
+
+.game__subtitle {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.game__history {
+  width: 100%;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.history-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--bg-code);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.history-list__number {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.history-list__value {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.history-list__result {
+  margin-left: auto;
+  color: var(--text);
+}
+
+/* ------------------------------------------------------------------ */
+/* Камень, ножницы, бумага                                            */
+/* ------------------------------------------------------------------ */
+
+/* Счёт матча: победы игрока и компьютера. */
+.rps__match {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--bg-code);
+  border-radius: var(--radius);
+}
+
+.rps__match-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  min-width: 90px;
+}
+
+.rps__match-caption {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.rps__match-value {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.rps__match-target {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.rps__round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  width: 100%;
+  padding: var(--space-lg);
+  background-color: var(--bg-code);
+  border-radius: var(--radius);
+}
+
+.rps__moves {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.rps__move {
+  --move-color: var(--text-strong);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  width: 100%;
+  max-width: 200px;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--transition), background-color var(--transition),
+    transform var(--transition);
+}
+
+/* Свой цвет для каждого хода — так их проще различать. */
+.rps__move--rock {
+  --move-color: #b8b8b8;
+}
+
+.rps__move--scissors {
+  --move-color: var(--info);
+}
+
+.rps__move--paper {
+  --move-color: var(--success);
+}
+
+.rps__move:hover:not(:disabled) {
+  border-color: var(--accent);
+  background-color: var(--bg-elevated);
+  transform: translateY(-2px);
+}
+
+.rps__move:active {
+  transform: translateY(0);
+}
+
+/* После окончания матча ходы недоступны. */
+.rps__move:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rps__emoji {
+  color: var(--move-color);
+  font-size: 48px;
+  line-height: 1;
+}
+
+.rps__move-label {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.rps__versus {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.rps__result {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.rps__result--win {
+  color: var(--success);
+}
+
+.rps__result--lose {
+  color: var(--danger);
+}
+
+.rps__result--draw {
+  color: var(--warning);
+}
+
+.rps__score {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.rps__score strong {
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+.rps__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.rps__history-result {
+  margin-left: auto;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rps__history-result--win {
+  color: var(--success);
+}
+
+.rps__history-result--lose {
+  color: var(--danger);
+}
+
+.rps__history-result--draw {
+  color: var(--warning);
+}
+
+/* ------------------------------------------------------------------ */
+/* Виселица                                                            */
+/* ------------------------------------------------------------------ */
+
+.hangman__word {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: center;
+}
+
+.hangman__letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 40px;
+  background-color: var(--bg-code);
+  border-bottom: 2px solid var(--border-strong);
+  border-radius: var(--radius) var(--radius) 0 0;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.hangman__keyboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(38px, 1fr));
+  gap: var(--space-xs);
+  width: 100%;
+  max-width: 640px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Крестики-нолики                                                     */
+/* ------------------------------------------------------------------ */
+
+.ttt__board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 320px;
+  margin: var(--space-sm) 0;
+}
+
+.ttt__cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color var(--transition), background-color var(--transition),
+    transform var(--transition);
+}
+
+.ttt__cell:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: scale(1.03);
+}
+
+.ttt__cell:disabled {
+  cursor: default;
+}
+
+.ttt__cell--winning {
+  background-color: var(--success-soft);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.ttt__score {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.ttt__score strong {
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+/* ------------------------------------------------------------------ */
+/* Змейка                                                              */
+/* ------------------------------------------------------------------ */
+
+.snake__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.snake__score {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.snake__score strong {
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 18px;
+}
+
+.snake__actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.snake__board {
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  gap: 1px;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+  padding: var(--space-xs);
+  background-color: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.snake__cell {
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.snake__cell--body {
+  background-color: var(--accent);
+}
+
+.snake__cell--head {
+  background-color: #8be28f;
+}
+
+.snake__cell--food {
+  background-color: var(--danger);
+  border-radius: 50%;
+}
+
+.snake__controls {
+  display: grid;
+  grid-template-areas:
+    '. up .'
+    'left down right';
+  grid-template-columns: repeat(3, var(--control-size));
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.snake__controls-row {
+  display: contents;
+}
+
+.snake__controls-spacer {
+  display: none;
+}
+
+.snake__control {
+  width: var(--control-size);
+  height: var(--control-size);
+  background-color: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition),
+    background-color var(--transition);
+}
+
+.snake__control:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.snake__control--up {
+  grid-area: up;
+}
+
+.snake__control--left {
+  grid-area: left;
+}
+
+.snake__control--down {
+  grid-area: down;
+}
+
+.snake__control--right {
+  grid-area: right;
+}
+
+.snake__control:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hangman__key {
+  min-height: 38px;
+  padding: 0;
+  background-color: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition),
+    background-color var(--transition);
+}
+
+.hangman__key:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hangman__key--guessed {
+  background-color: var(--success-soft);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.hangman__key--wrong {
+  background-color: var(--danger-soft);
+  border-color: var(--danger);
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+.hangman__key:disabled {
+  cursor: default;
+  opacity: 0.75;
+}

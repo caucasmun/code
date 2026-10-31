@@ -1,0 +1,119 @@
+/**
+ * Урок 2. Функции и условия.
+ */
+
+export const lessonFunctions = {
+  id: 'lesson-4',
+  slug: 'functions',
+  number: 4,
+  title: 'Функции и условия',
+  subtitle: 'Учим программу принимать решения',
+  icon: '🔀',
+  duration: 15,
+  topics: ['функции', 'параметры', 'return', 'if', 'else'],
+  intro:
+    'Функция — это команда, которую можно вызвать много раз. Условия позволяют программе выбирать путь в зависимости от данных. Вместе это основа почти любой игровой логики: сравнение счёта, проверка ввода, выбор победителя.',
+  theory: [
+    {
+      title: 'Параметры и возвращаемое значение',
+      text: 'Функция принимает параметры (аргументы) и возвращает результат через return. Если return не написать, функция вернёт undefined — именно поэтому в заданиях всегда нужен явный return.',
+      code: `function add(a, b) {
+  return a + b;
+}
+
+const result = add(2, 3);   // result === 5`,
+    },
+    {
+      title: 'if / else if / else',
+      text: 'Условие проверяется сверху вниз, и выполняется первый подходящий блок. Порядок важен: более специфичные проверки ставьте раньше общих.',
+      code: `function getComment(score) {
+  if (score >= 90) return 'отлично';
+  if (score >= 70) return 'хорошо';
+  if (score >= 50) return 'удовлетворительно';
+  return 'неудовлетворительно';
+}`,
+    },
+    {
+      title: 'Логические операторы',
+      text: '&& — «и» (оба условия должны быть верны), || — «или» (хотя бы одно), ! — «не». Их используют, чтобы объединить проверки в одну строку.',
+      code: `const age = 20;
+const hasTicket = true;
+
+if (age >= 18 && hasTicket) {
+  console.log('Проходите');
+}`,
+    },
+  ],
+  practice: [
+    {
+      id: 'f-1',
+      title: 'Чётное или нечётное',
+      description:
+        'Напишите функцию isEven(number), которая возвращает true для чётного числа и false для нечётного.',
+      criteria: 'Функция работает и с положительными, и с отрицательными числами.',
+      starterCode: `function isEven(number) {
+  // Напишите решение здесь
+
+}
+`,
+      functionName: 'isEven',
+      tests: [
+        { args: [4], expected: true, description: 'Чётное число' },
+        { args: [7], expected: false, description: 'Нечётное число' },
+        { args: [0], expected: true, description: 'Ноль чётный' },
+        { args: [-3], expected: false, description: 'Отрицательное нечётное' },
+      ],
+      hints: [
+        'Остаток от деления: number % 2. Если он равен нулю — число чётное.',
+        'Готовое условие: return number % 2 === 0;',
+      ],
+    },
+    {
+      id: 'f-2',
+      title: 'Максимум из двух',
+      description:
+        'Напишите функцию getMax(a, b), которая возвращает большее из двух чисел. Если числа равны — верните любое из них.',
+      criteria: 'Функция возвращает наибольшее из двух аргументов.',
+      starterCode: `function getMax(a, b) {
+  // Напишите решение здесь
+
+}
+`,
+      functionName: 'getMax',
+      tests: [
+        { args: [3, 9], expected: 9, description: 'Второе больше' },
+        { args: [12, 4], expected: 12, description: 'Первое больше' },
+        { args: [-5, -2], expected: -2, description: 'Отрицательные числа' },
+        { args: [7, 7], expected: 7, description: 'Равные числа' },
+      ],
+      hints: [
+        'Используйте тернарный оператор: условие ? значениеЕслиДа : значениеЕслиНет.',
+        'Полностью: return a > b ? a : b;',
+      ],
+    },
+    {
+      id: 'f-3',
+      title: 'Оценка по баллам',
+      description:
+        'Напишите функцию getGrade(points): 90 и больше — 5, 70–89 — 4, 50–69 — 3, меньше 50 — 2.',
+      criteria: 'Границы 90, 70 и 50 обрабатываются на «5», «4» и «3» соответственно.',
+      starterCode: `function getGrade(points) {
+  // Напишите решение здесь
+
+}
+`,
+      functionName: 'getGrade',
+      tests: [
+        { args: [95], expected: 5, description: 'Отлично' },
+        { args: [90], expected: 5, description: 'Граница 90' },
+        { args: [75], expected: 4, description: 'Хорошо' },
+        { args: [50], expected: 3, description: 'Граница 50' },
+        { args: [20], expected: 2, description: 'Плохо' },
+      ],
+      hints: [
+        'Проверяйте от большего к меньшему: сначала >= 90, потом >= 70, потом >= 50.',
+        'Последний случай можно не проверять условием — просто return 2.',
+      ],
+    },
+  ],
+};

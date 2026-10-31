@@ -1,0 +1,340 @@
+/* ------------------------------------------------------------------ */
+/* Главная страница                                                    */
+/* ------------------------------------------------------------------ */
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.hero__title {
+  margin-bottom: var(--space-md);
+  background: linear-gradient(120deg, var(--text-strong) 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__text {
+  max-width: 640px;
+  margin: 0 auto var(--space-lg);
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.catalog {
+  margin-top: var(--space-xl);
+}
+
+.catalog__filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+.field--search {
+  flex: 1;
+  min-width: 240px;
+}
+
+.catalog__empty {
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-large);
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* ------------------------------------------------------------------ */
+/* Страницы входа и регистрации                                       */
+/* ------------------------------------------------------------------ */
+
+.auth {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-xl) 0;
+}
+
+.auth__card {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-xl);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-md);
+}
+
+.auth__title {
+  margin-bottom: var(--space-sm);
+}
+
+.auth__subtitle {
+  margin-bottom: var(--space-lg);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.auth__footer {
+  margin: var(--space-lg) 0 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* Страница прогресса                                                 */
+/* ------------------------------------------------------------------ */
+
+.progress-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-page__header {
+  margin-bottom: var(--space-xl);
+}
+
+.progress-page__subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.progress-page__summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.progress-page__card {
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+.progress-page__card-title {
+  margin-bottom: var(--space-sm);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.progress-page__card-value {
+  margin-bottom: var(--space-md);
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.progress-page__card-value span {
+  color: var(--text-muted);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.progress-page__card-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.progress-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+.progress-list__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.progress-list__title {
+  margin: 0 0 var(--space-xs);
+  font-size: 17px;
+}
+
+.progress-list__meta {
+  margin: 0 0 var(--space-sm);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.progress-list__item .progress-bar {
+  margin-bottom: 0;
+}
+
+.progress-page__games {
+  margin-bottom: var(--space-xl);
+}
+
+/* ------------------------------------------------------------------ */
+/* Страница 404                                                        */
+/* ------------------------------------------------------------------ */
+
+.not-found {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.not-found__code {
+  margin-bottom: var(--space-md);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.not-found__title {
+  margin-bottom: var(--space-md);
+}
+
+.not-found__text {
+  max-width: 480px;
+  margin: 0 auto var(--space-lg);
+  color: var(--text-muted);
+}
+
+.not-found__actions {
+  margin-bottom: var(--space-lg);
+}
+
+.not-found__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Страница игры                                                       */
+/* ------------------------------------------------------------------ */
+
+.game-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-page__header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.game-page__title {
+  margin: 0;
+}
+
+.game-page__description {
+  max-width: 760px;
+  color: var(--text-muted);
+}
+
+.game-page__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0 0 var(--space-xl);
+  padding: 0;
+  list-style: none;
+}
+
+.game-page__rules {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+.rules-list {
+  margin-bottom: 0;
+  padding-left: 22px;
+  color: var(--text);
+}
+
+.rules-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.game-page__completion-hint {
+  margin: var(--space-md) 0 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.game-page__play {
+  margin-bottom: var(--space-xl);
+}
+
+.game-page__tasks {
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 860px) {
+  .progress-list__item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .catalog__filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
