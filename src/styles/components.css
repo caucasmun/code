@@ -1025,3 +1025,31 @@
   }
   .theme-toggle__icon { display: none; }
 }
+/* ------------------------------------------------------------------ */
+/* Строка тумблера темы в меню                                         */
+/* ------------------------------------------------------------------ */
+
+.theme-toggle-row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.theme-toggle__label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .theme-toggle-row {
+    width: 100%;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid var(--border-default);
+    margin-top: var(--space-sm);
+  }
+}
+
+.theme-toggle--dark { }
+
