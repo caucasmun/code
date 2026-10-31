@@ -35,7 +35,9 @@ export default function HomePage() {
   return (
     <div className="home">
       <section className="hero">
-        <h1 className="hero__title">Учите JavaScript, играя</h1>
+        <h1 className="hero-title">
+          Учите <span className="hero-title__accent">JavaScript</span>, играя
+        </h1>
         <p className="hero__text">
           Пять мини-игр, в которых JavaScript — не теория, а способ победить. В каждой игре есть
           исходный код с разбором и практические задания, которые можно пройти самому.
