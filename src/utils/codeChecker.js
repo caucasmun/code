@@ -21,7 +21,7 @@
  * }
  */
 
-import { runAndGetFunction } from './codeRunner';
+import { runAndGetFunction, runCode } from './codeRunner';
 import { analyzeCode, describeRuntimeError } from './codeAnalyzer';
 
 /** Сравнивает два значения с учётом вложенных массивов и объектов. */
@@ -97,7 +97,32 @@ export async function checkTask(task, code) {
 
   const functionName = task.functionName;
   if (!functionName) {
-    return { ...emptyResult, fatal: true, errors: [buildError('В задании не указана функция для проверки.')] };
+    // Задача без функции: просто запускаем код и проверяем вывод.
+    const started = await runCode(source);
+
+    if (!started.ok) {
+      const described = describeRuntimeError(started);
+      return { ...emptyResult, fatal: true, errors: [described], output: started.output || [] };
+    }
+
+    const expectedOutput = Array.isArray(task.expectedOutput)
+      ? task.expectedOutput
+      : (typeof task.expectedOutput === 'string' ? [task.expectedOutput] : null);
+
+    let passed = true;
+    if (expectedOutput) {
+      passed = deepEqual(started.output, expectedOutput);
+    }
+
+    return {
+      passed,
+      tests: expectedOutput
+        ? [{ index: 0, description: 'Вывод консоли', args: [], expected: expectedOutput, actual: started.output, ok: passed, error: null, errorName: null }]
+        : [],
+      errors: [],
+      output: started.output || [],
+      fatal: false,
+    };
   }
 
   const started = await runAndGetFunction(source, functionName);
