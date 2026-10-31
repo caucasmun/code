@@ -1,4 +1,4 @@
-/* ------------------------------------------------------------------ */
+﻿/* ------------------------------------------------------------------ */
 /* Кнопки                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -917,65 +917,111 @@
     grid-template-columns: 1fr;
   }
 }
-
-
 /* ------------------------------------------------------------------ */
-/* Тумблер темы                                                        */
+/* Тумблер темы (спецификация)                                         */
 /* ------------------------------------------------------------------ */
 
 .theme-toggle {
+  --toggle-w: 64px;
+  --toggle-h: 32px;
+  --toggle-pad: 4px;
+  --thumb-size: calc(var(--toggle-h) - var(--toggle-pad) * 2);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 28px;
-  padding: 3px;
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-pill);
-  background-color: var(--bg-surface);
+  padding: 0;
+  border: none;
+  background: transparent;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition);
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent-primary);
+  border-radius: 999px;
+  min-width: 44px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .theme-toggle__track {
   position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 4px;
-  font-size: 11px;
+  width: var(--toggle-w);
+  height: var(--toggle-h);
+  padding: var(--toggle-pad);
+  border-radius: 999px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-sm) inset;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .theme-toggle__thumb {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 20px;
-  height: 20px;
+  top: var(--toggle-pad);
+  left: var(--toggle-pad);
+  width: var(--thumb-size);
+  height: var(--thumb-size);
   border-radius: 50%;
-  background-color: var(--accent-primary);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition);
-}
-
-.theme-toggle--dark .theme-toggle__thumb {
-  transform: translateX(24px);
+  background: var(--accent-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.25s ease;
+  z-index: 1;
 }
 
 .theme-toggle__icon {
   position: relative;
-  z-index: 1;
-  opacity: 0.6;
-  transition: opacity var(--transition);
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  fill: none;
+  stroke: var(--text-secondary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.25s ease, opacity 0.25s ease;
 }
 
-.theme-toggle--dark .theme-toggle__icon--moon,
-.theme-toggle:not(.theme-toggle--dark) .theme-toggle__icon--sun {
-  opacity: 1;
+.theme-toggle__icon--sun { margin-left: 4px; margin-right: auto; }
+.theme-toggle__icon--moon { margin-left: auto; margin-right: 4px; }
+
+.theme-toggle[aria-checked="false"] .theme-toggle__icon--sun {
+  stroke: var(--text-on-accent);
+}
+.theme-toggle[aria-checked="true"] .theme-toggle__icon--moon {
+  stroke: var(--text-on-accent);
+}
+
+.theme-toggle[aria-checked="true"] .theme-toggle__thumb {
+  transform: translateX(calc(var(--toggle-w) - var(--thumb-size) - var(--toggle-pad) * 2));
+}
+
+.theme-toggle:focus-visible .theme-toggle__track {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .theme-toggle:hover .theme-toggle__track {
+    border-color: var(--accent-border);
+  }
+  .theme-toggle:hover .theme-toggle__thumb {
+    background: var(--accent-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle__thumb,
+  .theme-toggle__track,
+  .theme-toggle__icon {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-toggle {
+    --toggle-w: 48px;
+    --toggle-h: 26px;
+  }
+  .theme-toggle__icon { display: none; }
 }
