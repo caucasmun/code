@@ -3,9 +3,9 @@
  */
 
 export const lessonVariables = {
-  id: 'lesson-3',
+  id: 'variables',
   slug: 'variables',
-  number: 3,
+  number: 8,
   title: 'Переменные и типы данных',
   subtitle: 'Храним значения и учимся их запрашивать',
   icon: '📦',
@@ -65,7 +65,7 @@ console.log(greeting);   // Привет, Аня!`,
   ],
   practice: [
     {
-      id: 'v-1',
+      id: 'variables',
       title: 'Приветствие',
       description:
         'Напишите функцию createGreeting(name), которая возвращает строку «Привет, <имя>!». Например, createGreeting("Аня") должна вернуть «Привет, Аня!».',
@@ -87,7 +87,7 @@ console.log(greeting);   // Привет, Аня!`,
       ],
     },
     {
-      id: 'v-2',
+      id: 'variables',
       title: 'Тип значения',
       description:
         'Напишите функцию getType(value), которая возвращает строку с названием типа: "number", "string", "boolean" или "other" для остальных значений.',
@@ -110,7 +110,7 @@ console.log(greeting);   // Привет, Аня!`,
       ],
     },
     {
-      id: 'v-3',
+      id: 'variables',
       title: 'Возрастная группа',
       description:
         'Напишите функцию getAgeGroup(age). Для возраста меньше 18 верните "child", от 18 до 64 включительно — "adult", а для 65 и старше — "senior".',

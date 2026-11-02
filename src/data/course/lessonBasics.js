@@ -1,7 +1,7 @@
 ﻿export const lessonBasics = {
-  id: 'lesson-2',
+  id: 'basics',
   slug: 'basics',
-  number: 2,
+  number: 9,
   title: 'Первые шаги в JavaScript',
   subtitle: 'Как компьютер понимает код',
   icon: '🚀',
@@ -62,7 +62,7 @@
   ],
   practice: [
     {
-      id: 'b-1',
+      id: 'basics',
       title: 'Первое приветствие',
       description:
         'Напишите функцию sayHello(), которая возвращает строку «Привет, мир!». Попробуйте сначала запустить код с console.log, а затем сделайте return.',
@@ -78,7 +78,7 @@
       ],
     },
     {
-      id: 'b-2',
+      id: 'basics',
       title: 'Сложи два числа',
       description:
         'Напишите функцию add(a, b), которая возвращает сумму двух чисел.',
@@ -96,7 +96,7 @@
       ],
     },
     {
-      id: 'b-3',
+      id: 'basics',
       title: 'Положительное ли число',
       description:
         'Напишите функцию isPositive(number), которая возвращает true, если число больше нуля, и false в остальных случаях.',

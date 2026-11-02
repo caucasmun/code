@@ -1,7 +1,7 @@
-export const lesson0Statements = {
-  id: 'lesson-0-statements',
+﻿export const lesson0Statements = {
+  id: 'statements',
   slug: 'statements',
-  number: 3,
+  number: 6,
   title: 'Инструкции (Statements)',
   subtitle: 'Команды для компьютера',
   icon: '📋',
@@ -44,7 +44,7 @@ export const lesson0Statements = {
   ],
   practice: [
     {
-      id: 'stmt-1',
+      id: 'statements',
       title: 'Две инструкции',
       description:
         'Напиши код, который выводит сначала "Первый", потом "Второй".',
@@ -54,7 +54,7 @@ export const lesson0Statements = {
       hints: ['Используй две console.log.'],
     },
     {
-      id: 'stmt-2',
+      id: 'statements',
       title: 'Порядок важен',
       description:
         'Напиши код, который выводит "A", "B", "C" в таком порядке.',

@@ -1,7 +1,7 @@
 ﻿export const lesson0Return = {
-  id: 'lesson-0c',
+  id: 'return-value',
   slug: 'return-value',
-  number: 3,
+  number: 15,
   title: 'return: как попросить компьютер отдать результат',
   subtitle: 'Показать vs вернуть',
   icon: '📦',
@@ -17,7 +17,7 @@
     { title: '✅ Что ты теперь умеешь', text: 'Понимать разницу между показать и вернуть.' },
   ],
   practice: [
-    { id: 'l0r-1', title: 'Верни число', description: 'Напиши функцию getNumber(), которая возвращает число 5.', criteria: 'Функция возвращает 5.', starterCode: 'function getNumber() {\n  // Напишите решение здесь\n\n}\n', functionName: 'getNumber', tests: [ { args: [], expected: 5, description: 'Без аргументов' } ], hints: ['Используй return 5.'] },
-    { id: 'l0r-2', title: 'Сумма с return', description: 'Напиши функцию sum(a, b), которая возвращает сумму.', criteria: 'Функция возвращает сумму.', starterCode: 'function sum(a, b) {\n  // Напишите решение здесь\n\n}\n', functionName: 'sum', tests: [ { args: [2, 3], expected: 5, description: 'Два плюс три' }, { args: [10, -4], expected: 6, description: 'С отрицательным' } ], hints: ['Верни a + b.'] },
+    { id: 'return-value', title: 'Верни число', description: 'Напиши функцию getNumber(), которая возвращает число 5.', criteria: 'Функция возвращает 5.', starterCode: 'function getNumber() {\n  // Напишите решение здесь\n\n}\n', functionName: 'getNumber', tests: [ { args: [], expected: 5, description: 'Без аргументов' } ], hints: ['Используй return 5.'] },
+    { id: 'return-value', title: 'Сумма с return', description: 'Напиши функцию sum(a, b), которая возвращает сумму.', criteria: 'Функция возвращает сумму.', starterCode: 'function sum(a, b) {\n  // Напишите решение здесь\n\n}\n', functionName: 'sum', tests: [ { args: [2, 3], expected: 5, description: 'Два плюс три' }, { args: [10, -4], expected: 6, description: 'С отрицательным' } ], hints: ['Верни a + b.'] },
   ],
 };

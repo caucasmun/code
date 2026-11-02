@@ -3,9 +3,9 @@
  */
 
 export const lessonArrays = {
-  id: 'lesson-5',
+  id: 'arrays',
   slug: 'arrays',
-  number: 5,
+  number: 17,
   title: 'Массивы и обход',
   subtitle: 'Работаем со списками данных',
   icon: '📚',
@@ -67,7 +67,7 @@ const big = [1, 5, 8].filter((n) => n > 4);          // [5, 8]`,
   ],
   practice: [
     {
-      id: 'a-1',
+      id: 'arrays',
       title: 'Сумма элементов',
       description:
         'Напишите функцию sumArray(numbers), которая возвращает сумму всех чисел в массиве. Для пустого массива верните 0.',
@@ -89,7 +89,7 @@ const big = [1, 5, 8].filter((n) => n > 4);          // [5, 8]`,
       ],
     },
     {
-      id: 'a-2',
+      id: 'arrays',
       title: 'Самое длинное слово',
       description:
         'Напишите функцию longestWord(words), которая возвращает самое длинное слово из массива. Если слов несколько одинаковой длины — верните первое.',
@@ -111,7 +111,7 @@ const big = [1, 5, 8].filter((n) => n > 4);          // [5, 8]`,
       ],
     },
     {
-      id: 'a-3',
+      id: 'arrays',
       title: 'Только чётные',
       description:
         'Напишите функцию getEvenNumbers(numbers), которая возвращает новый массив только из чётных чисел.',

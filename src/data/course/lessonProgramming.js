@@ -1,7 +1,7 @@
 ﻿export const lessonProgramming = {
-  id: 'lesson-1',
+  id: 'programming',
   slug: 'programming',
-  number: 7,
+  number: 1,
   title: 'Собираем всё вместе: программа как рецепт',
   subtitle: 'Финальный урок вводного модуля',
   icon: '🧠',
@@ -80,7 +80,7 @@
   ],
   practice: [
     {
-      id: 'p-1',
+      id: 'programming',
       title: 'Удвой цену',
       description:
         'В магазине цена товара удваивается при доставке. Напишите функцию doublePrice(price), которая возвращает цену, умноженную на 2.',
@@ -98,7 +98,7 @@
       ],
     },
     {
-      id: 'p-2',
+      id: 'programming',
       title: 'Взрослый ли человек',
       description:
         'Напишите функцию isAdult(age), которая возвращает true, если возраст 18 и больше, и false в остальных случаях.',
@@ -116,7 +116,7 @@
       ],
     },
     {
-      id: 'p-3',
+      id: 'programming',
       title: 'Повтори слово',
       description:
         'Напишите функцию repeatWord(word, times), которая возвращает строку, в которой word повторяется times раз подряд без пробелов. Если times равно 0 — верните пустую строку.',

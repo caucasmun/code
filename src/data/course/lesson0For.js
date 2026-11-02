@@ -1,7 +1,7 @@
 ﻿export const lesson0For = {
-  id: 'lesson-0f',
+  id: 'for-loop',
   slug: 'for-loop',
-  number: 6,
+  number: 13,
   title: 'for: как повторить N раз',
   subtitle: 'Циклы',
   icon: '🔁',
@@ -17,7 +17,7 @@
     { title: '✅ Что ты теперь умеешь', text: 'Писать цикл for; понимать три его части.' },
   ],
   practice: [
-    { id: 'l0for-1', title: 'Сумма от 1 до n', description: 'Напиши функцию sumTo(n), которая возвращает сумму чисел от 1 до n.', criteria: 'Функция возвращает сумму.', starterCode: 'function sumTo(n) {\n  // Напишите решение здесь\n\n}\n', functionName: 'sumTo', tests: [ { args: [5], expected: 15, description: 'До пяти' }, { args: [3], expected: 6, description: 'До трёх' } ], hints: ['Создай переменную total = 0 и цикл for.'] },
-    { id: 'l0for-2', title: 'Повтори слово', description: 'Напиши функцию repeatWord(word, times), которая возвращает word, повторённое times раз.', criteria: 'Функция повторяет слово.', starterCode: 'function repeatWord(word, times) {\n  // Напишите решение здесь\n\n}\n', functionName: 'repeatWord', tests: [ { args: ['А', 3], expected: 'ААА', description: 'Три раза' }, { args: ['кот', 2], expected: 'коткот', description: 'Два раза' } ], hints: ['Создай пустую строку и цикл.'] },
+    { id: 'for-loop', title: 'Сумма от 1 до n', description: 'Напиши функцию sumTo(n), которая возвращает сумму чисел от 1 до n.', criteria: 'Функция возвращает сумму.', starterCode: 'function sumTo(n) {\n  // Напишите решение здесь\n\n}\n', functionName: 'sumTo', tests: [ { args: [5], expected: 15, description: 'До пяти' }, { args: [3], expected: 6, description: 'До трёх' } ], hints: ['Создай переменную total = 0 и цикл for.'] },
+    { id: 'for-loop', title: 'Повтори слово', description: 'Напиши функцию repeatWord(word, times), которая возвращает word, повторённое times раз.', criteria: 'Функция повторяет слово.', starterCode: 'function repeatWord(word, times) {\n  // Напишите решение здесь\n\n}\n', functionName: 'repeatWord', tests: [ { args: ['А', 3], expected: 'ААА', description: 'Три раза' }, { args: ['кот', 2], expected: 'коткот', description: 'Два раза' } ], hints: ['Создай пустую строку и цикл.'] },
   ],
 };

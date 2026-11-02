@@ -1,7 +1,7 @@
-export const lesson0SyntaxErrors = {
-  id: 'lesson-0-syntax',
+﻿export const lesson0SyntaxErrors = {
+  id: 'syntax-errors',
   slug: 'syntax-errors',
-  number: 4,
+  number: 7,
   title: 'Синтаксические ошибки',
   subtitle: 'Как не бояться красного текста',
   icon: '🚨',
@@ -44,7 +44,7 @@ export const lesson0SyntaxErrors = {
   ],
   practice: [
     {
-      id: 'syn-1',
+      id: 'syntax-errors',
       title: 'Исправь ошибку',
       description:
         'Напиши код, который выводит "Готово" без синтаксических ошибок.',
@@ -54,7 +54,7 @@ export const lesson0SyntaxErrors = {
       hints: ['Проверь скобки и кавычки.'],
     },
     {
-      id: 'syn-2',
+      id: 'syntax-errors',
       title: 'Две правильные строки',
       description:
         'Напиши код, который выводит "Ок" и "Да" без ошибок.',

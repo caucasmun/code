@@ -1,7 +1,7 @@
 ﻿export const lesson0Function = {
-  id: 'lesson-0d',
+  id: 'function-button',
   slug: 'function-button',
-  number: 4,
+  number: 14,
   title: 'function: кнопка, которая делает работу',
   subtitle: 'Упакованный код с именем',
   icon: '🔘',
@@ -17,7 +17,7 @@
     { title: '✅ Что ты теперь умеешь', text: 'Создавать функции; вызывать их; передавать параметры.' },
   ],
   practice: [
-    { id: 'l0f-1', title: 'Квадрат числа', description: 'Напиши функцию square(n), которая возвращает n * n.', criteria: 'Функция возвращает квадрат.', starterCode: 'function square(n) {\n  // Напишите решение здесь\n\n}\n', functionName: 'square', tests: [ { args: [4], expected: 16, description: 'Четыре' }, { args: [3], expected: 9, description: 'Три' } ], hints: ['Верни n * n.'] },
-    { id: 'l0f-2', title: 'Приветствие с параметром', description: 'Напиши функцию greet(name), которая возвращает "Привет, " + name.', criteria: 'Функция использует параметр.', starterCode: 'function greet(name) {\n  // Напишите решение здесь\n\n}\n', functionName: 'greet', tests: [ { args: ['Аня'], expected: 'Привет, Аня', description: 'Аня' }, { args: ['Борис'], expected: 'Привет, Борис', description: 'Борис' } ], hints: ['Верни "Привет, " + name.'] },
+    { id: 'function-button', title: 'Квадрат числа', description: 'Напиши функцию square(n), которая возвращает n * n.', criteria: 'Функция возвращает квадрат.', starterCode: 'function square(n) {\n  // Напишите решение здесь\n\n}\n', functionName: 'square', tests: [ { args: [4], expected: 16, description: 'Четыре' }, { args: [3], expected: 9, description: 'Три' } ], hints: ['Верни n * n.'] },
+    { id: 'function-button', title: 'Приветствие с параметром', description: 'Напиши функцию greet(name), которая возвращает "Привет, " + name.', criteria: 'Функция использует параметр.', starterCode: 'function greet(name) {\n  // Напишите решение здесь\n\n}\n', functionName: 'greet', tests: [ { args: ['Аня'], expected: 'Привет, Аня', description: 'Аня' }, { args: ['Борис'], expected: 'Привет, Борис', description: 'Борис' } ], hints: ['Верни "Привет, " + name.'] },
   ],
 };

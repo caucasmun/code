@@ -1,7 +1,7 @@
-export const lesson0Comments = {
-  id: 'lesson-0-comments',
+﻿export const lesson0Comments = {
+  id: 'comments',
   slug: 'comments',
-  number: 2,
+  number: 5,
   title: 'Комментарии',
   subtitle: 'Заметки в коде',
   icon: '📝',
@@ -44,7 +44,7 @@ export const lesson0Comments = {
   ],
   practice: [
     {
-      id: 'comm-1',
+      id: 'comments',
       title: 'Закомментируй строку',
       description:
         'Напиши код, который выводит "Привет" и закомментированную строку console.log("Пока").',
@@ -54,7 +54,7 @@ export const lesson0Comments = {
       hints: ['Используй // перед строкой.'],
     },
     {
-      id: 'comm-2',
+      id: 'comments',
       title: 'Многострочный комментарий',
       description:
         'Напиши код, который выводит "Готово" и содержит многострочный комментарий /* тест */.',

@@ -1,4 +1,15 @@
 ﻿import { lesson0Launch } from './lesson0Launch';
+import { lesson0Console } from './lesson0Console';
+import { lesson0Comments } from './lesson0Comments';
+import { lesson0Statements } from './lesson0Statements';
+import { lesson0SyntaxErrors } from './lesson0SyntaxErrors';
+import { lesson0TestOutput } from './lesson0TestOutput';
+import { lesson0Return } from './lesson0Return';
+import { lesson0Function } from './lesson0Function';
+import { lesson0If } from './lesson0If';
+import { lesson0For } from './lesson0For';
+import { lessonAlgorithm } from './lessonAlgorithm';
+import { lessonOperators } from './lessonOperators';
 import { lessonProgramming } from './lessonProgramming';
 import { lessonBasics } from './lessonBasics';
 import { lessonVariables } from './lessonVariables';

@@ -3,9 +3,9 @@
  */
 
 export const lessonObjects = {
-  id: 'lesson-6',
+  id: 'objects',
   slug: 'objects',
-  number: 6,
+  number: 18,
   title: 'Объекты и состояние игры',
   subtitle: 'Храним всё, что нужно игре',
   icon: '🎮',
@@ -72,7 +72,7 @@ draw({ score: 10, lives: 2 });`,
   ],
   practice: [
     {
-      id: 'o-1',
+      id: 'objects',
       title: 'Счётчик очков',
       description:
         'Напишите функцию addPoints(state, points), которая возвращает новый объект состояния с увеличенным счётом. Исходный объект изменять нельзя.',
@@ -94,7 +94,7 @@ draw({ score: 10, lives: 2 });`,
       ],
     },
     {
-      id: 'o-2',
+      id: 'objects',
       title: 'Игрок и противник',
       description:
         'Напишите функцию describePlayer(player), где player — объект с полями name и health. Функция возвращает строку вида «Аня: 80 здоровья».',
@@ -115,7 +115,7 @@ draw({ score: 10, lives: 2 });`,
       ],
     },
     {
-      id: 'o-3',
+      id: 'objects',
       title: 'Есть ли предмет в инвентаре',
       description:
         'Напишите функцию hasItem(inventory, item), где inventory — массив названий предметов. Функция возвращает true, если предмет есть в списке.',

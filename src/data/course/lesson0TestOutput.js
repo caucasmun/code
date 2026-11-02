@@ -1,7 +1,7 @@
-export const lesson0TestOutput = {
-  id: 'lesson-0-tests',
+﻿export const lesson0TestOutput = {
+  id: 'reading-tests',
   slug: 'reading-tests',
-  number: 5,
+  number: 19,
   title: 'Как читать вывод тестов',
   subtitle: 'Разбираем ошибки проверки',
   icon: '🧪',
@@ -44,7 +44,7 @@ export const lesson0TestOutput = {
   ],
   practice: [
     {
-      id: 'test-1',
+      id: 'reading-tests',
       title: 'Выведи правильный результат',
       description:
         'Напиши код, который выводит число 10.',
@@ -54,7 +54,7 @@ export const lesson0TestOutput = {
       hints: ['Проверь, что результат равен 10.'],
     },
     {
-      id: 'test-2',
+      id: 'reading-tests',
       title: 'Сравни вывод',
       description:
         'Напиши код, который выводит "Ок".',

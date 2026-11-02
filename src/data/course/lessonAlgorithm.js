@@ -1,7 +1,7 @@
-export const lessonAlgorithm = {
-  id: 'lesson-algorithm',
+﻿export const lessonAlgorithm = {
+  id: 'algorithm',
   slug: 'algorithm',
-  number: 7,
+  number: 2,
   title: 'Алгоритм и порядок действий',
   subtitle: 'Последовательность шагов',
   icon: '🗺️',
@@ -44,7 +44,7 @@ export const lessonAlgorithm = {
   ],
   practice: [
     {
-      id: 'algo-1',
+      id: 'algorithm',
       title: 'Порядок шагов',
       description:
         'Напиши код, который выводит шаги в правильном порядке: "1. Вскипяти воду", "2. Положи пакетик", "3. Залей кипятком".',
@@ -54,7 +54,7 @@ export const lessonAlgorithm = {
       hints: ['Каждая инструкция выполняется по порядку.'],
     },
     {
-      id: 'algo-2',
+      id: 'algorithm',
       title: 'Найди ошибку',
       description:
         'Напиши код, который выводит "Правильно: сначала вода, потом пакетик".',

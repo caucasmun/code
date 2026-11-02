@@ -1,7 +1,7 @@
 ﻿export const lesson0Console = {
-  id: 'lesson-0b',
+  id: 'console-log',
   slug: 'console-log',
-  number: 2,
+  number: 4,
   title: 'console.log: как попросить компьютер сказать',
   subtitle: 'Вывод текста и чисел',
   icon: '📣',
@@ -17,7 +17,7 @@
     { title: '✅ Что ты теперь умеешь', text: 'Выводить текст и числа; склеивать их через +.' },
   ],
   practice: [
-    { id: 'l0c-1', title: 'Приветствие', description: 'Напиши функцию greet(name), которая возвращает строку "Привет, <имя>!".', criteria: 'Функция возвращает строку с приветствием.', starterCode: 'function greet(name) {\n  // Напишите решение здесь\n\n}\n', functionName: 'greet', tests: [ { args: ['Аня'], expected: 'Привет, Аня!', description: 'Обычное имя' }, { args: ['Борис'], expected: 'Привет, Борис!', description: 'Другое имя' } ], hints: ['Верни "Привет, " + name + "!".'] },
-    { id: 'l0c-2', title: 'Склей текст и число', description: 'Напиши функцию makePhrase(age), которая возвращает строку "Мне " + age + " лет".', criteria: 'Функция склеивает текст и число.', starterCode: 'function makePhrase(age) {\n  // Напишите решение здесь\n\n}\n', functionName: 'makePhrase', tests: [ { args: [20], expected: 'Мне 20 лет', description: 'Двадцать' }, { args: [5], expected: 'Мне 5 лет', description: 'Пять' } ], hints: ['Верни "Мне " + age + " лет".'] },
+    { id: 'console-log', title: 'Приветствие', description: 'Напиши функцию greet(name), которая возвращает строку "Привет, <имя>!".', criteria: 'Функция возвращает строку с приветствием.', starterCode: 'function greet(name) {\n  // Напишите решение здесь\n\n}\n', functionName: 'greet', tests: [ { args: ['Аня'], expected: 'Привет, Аня!', description: 'Обычное имя' }, { args: ['Борис'], expected: 'Привет, Борис!', description: 'Другое имя' } ], hints: ['Верни "Привет, " + name + "!".'] },
+    { id: 'console-log', title: 'Склей текст и число', description: 'Напиши функцию makePhrase(age), которая возвращает строку "Мне " + age + " лет".', criteria: 'Функция склеивает текст и число.', starterCode: 'function makePhrase(age) {\n  // Напишите решение здесь\n\n}\n', functionName: 'makePhrase', tests: [ { args: [20], expected: 'Мне 20 лет', description: 'Двадцать' }, { args: [5], expected: 'Мне 5 лет', description: 'Пять' } ], hints: ['Верни "Мне " + age + " лет".'] },
   ],
 };

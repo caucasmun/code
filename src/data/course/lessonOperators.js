@@ -1,7 +1,7 @@
-export const lessonOperators = {
-  id: 'lesson-operators',
+﻿export const lessonOperators = {
+  id: 'operators',
   slug: 'operators',
-  number: 13,
+  number: 10,
   title: 'Операторы и математика',
   subtitle: 'Арифметика в JS',
   icon: '🧮',
@@ -44,7 +44,7 @@ export const lessonOperators = {
   ],
   practice: [
     {
-      id: 'op-1',
+      id: 'operators',
       title: 'Сумма',
       description:
         'Напиши код, который выводит 15 + 27 + 8 + 40.',
@@ -54,7 +54,7 @@ export const lessonOperators = {
       hints: ['Сложи все числа.'],
     },
     {
-      id: 'op-2',
+      id: 'operators',
       title: 'Остаток',
       description:
         'Напиши код, который выводит остаток от деления 100 на 7.',

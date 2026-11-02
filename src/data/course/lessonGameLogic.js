@@ -3,9 +3,9 @@
  */
 
 export const lessonGameLogic = {
-  id: 'lesson-8',
+  id: 'game-logic',
   slug: 'game-logic',
-  number: 8,
+  number: 20,
   title: 'Пишем игровую логику',
   subtitle: 'Собираем всё вместе: камень, ножницы, бумага',
   icon: '🏆',
@@ -72,7 +72,7 @@ const computerMove = MOVES[index];`,
   ],
   practice: [
     {
-      id: 'g-1',
+      id: 'game-logic',
       title: 'Кто победил',
       description:
         'Напишите функцию determineResult(playerMove, computerMove), которая возвращает "win", "lose" или "draw". Камень бьёт ножницы, ножницы бьют бумагу, бумага бьёт камень.',
@@ -96,7 +96,7 @@ const computerMove = MOVES[index];`,
       ],
     },
     {
-      id: 'g-2',
+      id: 'game-logic',
       title: 'Обновление счёта',
       description:
         'Напишите функцию updateScore(score, result), которая возвращает новый счёт: при победе +1, при поражении −1, при ничьей без изменений. Счёт не может уйти в минус.',
@@ -119,7 +119,7 @@ const computerMove = MOVES[index];`,
       ],
     },
     {
-      id: 'g-3',
+      id: 'game-logic',
       title: 'Полный раунд',
       description:
         'Напишите функцию playRound(score, playerMove, computerMove), которая возвращает новый счёт после раунда. Используйте логику определения победителя и обновления счёта.',

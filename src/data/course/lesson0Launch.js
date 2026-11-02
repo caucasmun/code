@@ -1,7 +1,7 @@
 ﻿export const lesson0Launch = {
-  id: 'lesson-0a',
+  id: 'launch-code',
   slug: 'launch-code',
-  number: 1,
+  number: 3,
   title: 'Как запустить код в браузере',
   subtitle: 'Первая программа за 30 секунд',
   icon: '⚡',
@@ -18,7 +18,7 @@
     { title: '✅ Что ты теперь умеешь', text: 'Открывать консоль браузера; запускать простые выражения; получать результат.' },
   ],
   practice: [
-    { id: 'l0-1', title: 'Посчитай в консоли', description: 'Напиши функцию multiply(a, b), которая возвращает произведение двух чисел.', criteria: 'Функция умножает любые два числа.', starterCode: 'function multiply(a, b) {\n  // Напишите решение здесь\n\n}\n', functionName: 'multiply', tests: [ { args: [5, 5], expected: 25, description: 'Пять на пять' }, { args: [2, 3], expected: 6, description: 'Два на три' } ], hints: ['Умножь a на b.', 'Полностью: return a * b;'] },
-    { id: 'l0-2', title: 'Сумма двух чисел', description: 'Напиши функцию add(a, b), которая возвращает сумму двух чисел.', criteria: 'Функция складывает любые два числа.', starterCode: 'function add(a, b) {\n  // Напишите решение здесь\n\n}\n', functionName: 'add', tests: [ { args: [2, 3], expected: 5, description: 'Два плюс три' }, { args: [10, -4], expected: 6, description: 'С отрицательным' } ], hints: ['Верни a + b.'] },
+    { id: 'launch-code', title: 'Посчитай в консоли', description: 'Напиши функцию multiply(a, b), которая возвращает произведение двух чисел.', criteria: 'Функция умножает любые два числа.', starterCode: 'function multiply(a, b) {\n  // Напишите решение здесь\n\n}\n', functionName: 'multiply', tests: [ { args: [5, 5], expected: 25, description: 'Пять на пять' }, { args: [2, 3], expected: 6, description: 'Два на три' } ], hints: ['Умножь a на b.', 'Полностью: return a * b;'] },
+    { id: 'launch-code', title: 'Сумма двух чисел', description: 'Напиши функцию add(a, b), которая возвращает сумму двух чисел.', criteria: 'Функция складывает любые два числа.', starterCode: 'function add(a, b) {\n  // Напишите решение здесь\n\n}\n', functionName: 'add', tests: [ { args: [2, 3], expected: 5, description: 'Два плюс три' }, { args: [10, -4], expected: 6, description: 'С отрицательным' } ], hints: ['Верни a + b.'] },
   ],
 };

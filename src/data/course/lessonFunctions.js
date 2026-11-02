@@ -3,9 +3,9 @@
  */
 
 export const lessonFunctions = {
-  id: 'lesson-4',
+  id: 'functions',
   slug: 'functions',
-  number: 4,
+  number: 16,
   title: 'Функции и условия',
   subtitle: 'Учим программу принимать решения',
   icon: '🔀',
@@ -71,7 +71,7 @@ if (age >= 18 && hasTicket) {
   ],
   practice: [
     {
-      id: 'f-1',
+      id: 'functions',
       title: 'Чётное или нечётное',
       description:
         'Напишите функцию isEven(number), которая возвращает true для чётного числа и false для нечётного.',
@@ -94,7 +94,7 @@ if (age >= 18 && hasTicket) {
       ],
     },
     {
-      id: 'f-2',
+      id: 'functions',
       title: 'Максимум из двух',
       description:
         'Напишите функцию getMax(a, b), которая возвращает большее из двух чисел. Если числа равны — верните любое из них.',
@@ -117,7 +117,7 @@ if (age >= 18 && hasTicket) {
       ],
     },
     {
-      id: 'f-3',
+      id: 'functions',
       title: 'Оценка по баллам',
       description:
         'Напишите функцию getGrade(points): 90 и больше — 5, 70–89 — 4, 50–69 — 3, меньше 50 — 2.',

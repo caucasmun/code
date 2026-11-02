@@ -3,9 +3,9 @@
  */
 
 export const lessonStrings = {
-  id: 'lesson-7',
+  id: 'strings',
   slug: 'strings',
-  number: 7,
+  number: 11,
   title: 'Строки',
   subtitle: 'Работа с текстом: слова, буквы, регистр',
   icon: '🔤',
@@ -64,7 +64,7 @@ word.length;          // 8 — пробелы тоже считаются`,
   ],
   practice: [
     {
-      id: 's-1',
+      id: 'strings',
       title: 'Сколько букв',
       description:
         'Напишите функцию countLetters(text), которая возвращает количество букв в строке, не считая пробелов.',
@@ -86,7 +86,7 @@ word.length;          // 8 — пробелы тоже считаются`,
       ],
     },
     {
-      id: 's-2',
+      id: 'strings',
       title: 'Проверка слова',
       description:
         'Напишите функцию isPalindrome(word), которая возвращает true, если слово читается одинаково в обе стороны. Регистр не учитывайте.',
@@ -108,7 +108,7 @@ word.length;          // 8 — пробелы тоже считаются`,
       ],
     },
     {
-      id: 's-3',
+      id: 'strings',
       title: 'Скрываем слово',
       description:
         'Напишите функцию hideWord(word), которая заменяет все буквы слова на «*». Длина слова при этом сохраняется.',
