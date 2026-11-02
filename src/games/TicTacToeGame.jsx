@@ -35,9 +35,7 @@ export default function TicTacToeGame({ onWin, onScore, onLose, onGameEnd }) {
     if (next.status === 'won') {
       // Вызываем onWin только если победил игрок (X)
       if (next.winner === 'X') {
-        const score = next.score.X + 1;
-        onWin?.(score);
-        onScore?.(score);
+        onWin?.();
         onGameEnd?.('won');
       }
       // Если победил компьютер (O), onWin НЕ вызывается.
@@ -52,7 +50,10 @@ export default function TicTacToeGame({ onWin, onScore, onLose, onGameEnd }) {
   };
 
   const handleRestart = () => {
-    setState(createInitialTicTacToeState('computer'));
+    setState(prevState => ({
+      ...createInitialTicTacToeState('computer'),
+      score: prevState.score // сохраняем текущий счёт
+    }));
   };
 
   const isFinished = state.status !== 'playing';

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Чистая игровая логика игры «Крестики-нолики».
  */
 
@@ -98,11 +98,15 @@ export function applyPlayerMove(state, cellIndex) {
 
   const { winner, line } = checkWinner(board);
   if (winner) {
-    return { ...state, board, status: 'won', winner, winningLine: line };
+    const newScore = { ...state.score };
+    if (winner === 'X') newScore.X += 1;
+    if (winner === 'O') newScore.O += 1;
+    return { ...state, board, status: 'won', winner, winningLine: line, score: newScore };
   }
 
   if (!hasEmptyCell(board)) {
-    return { ...state, board, status: 'draw', winner: null, winningLine: null };
+    const newScore = { ...state.score, draws: state.score.draws + 1 };
+    return { ...state, board, status: 'draw', winner: null, winningLine: null, score: newScore };
   }
 
   return { ...state, board, status: 'playing', winner: null, winningLine: null };
@@ -123,11 +127,15 @@ export function applyComputerMove(state) {
 
   const { winner, line } = checkWinner(board);
   if (winner) {
-    return { ...state, board, status: 'won', winner, winningLine: line };
+    const newScore = { ...state.score };
+    if (winner === 'X') newScore.X += 1;
+    if (winner === 'O') newScore.O += 1;
+    return { ...state, board, status: 'won', winner, winningLine: line, score: newScore };
   }
 
   if (!hasEmptyCell(board)) {
-    return { ...state, board, status: 'draw', winner: null, winningLine: null };
+    const newScore = { ...state.score, draws: state.score.draws + 1 };
+    return { ...state, board, status: 'draw', winner: null, winningLine: null, score: newScore };
   }
 
   return { ...state, board, status: 'playing', winner: null, winningLine: null };
