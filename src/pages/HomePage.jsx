@@ -20,14 +20,16 @@ export default function HomePage() {
     document.title = 'Код в игре — изучение JavaScript через игры';
   }, []);
 
-  const handleChooseGame = (slug) => {
-    dispatch(setCurrentGame(slug));
-    window.history.replaceState(null, '', `/game/${slug}`);
+  const handleSearch = (event) => {
+    dispatch(setSearch(event.target.value));
   };
 
-  const handleScrollToCatalog = () => {
-    const el = document.getElementById('catalog');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  const handleDifficulty = (event) => {
+    dispatch(setDifficulty(event.target.value));
+  };
+
+  const handleReset = () => {
+    dispatch(resetFilters());
   };
 
   return (
@@ -40,14 +42,14 @@ export default function HomePage() {
           JavaScript делает сайты живыми: считает корзину, показывает анимации и реагирует на клики.
           Изучите его с нуля на практике — прямо в браузере, без установки программ.
         </p>
+        <p className="hero__lead">
+          JavaScript делает сайты живыми: считает корзину, показывает анимации и реагирует на клики.
+          Изучите его с нуля на практике — прямо в браузере, без установки программ.
+        </p>
         <div className="hero__actions">
-          <button
-            type="button"
-            className="button button--primary"
-            onClick={() => handleChooseGame('tic-tac-toe')}
-          >
+          <a href="#catalog" className="button button--primary">
             Выбрать игру
-          </button>
+          </a>
           {!user ? (
             <Link to="/register" className="button button--ghost">
               Создать аккаунт
