@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import CodeBlock from '../components/CodeBlock';
-import CodeTask from '../components/CodeTask';
+import PracticeBlock from '../components/PracticeBlock';
 import ProgressBar from '../components/ProgressBar';
 import useCourseProgress from '../hooks/useCourseProgress';
 import {
@@ -121,7 +121,7 @@ export default function CourseLessonPage() {
         <ProgressBar value={lessonDone} max={lesson.practice.length} label="Решено заданий" />
 
         {lesson.practice.map((task) => (
-          <CodeTask
+          <PracticeBlock
             key={task.id}
             task={task}
             isCompleted={isTaskCompleted(task.id)}

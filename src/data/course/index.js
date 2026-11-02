@@ -1,23 +1,23 @@
-﻿import { lesson0Launch } from './lesson0Launch';
-import { lesson0Console } from './lesson0Console';
-import { lesson0Comments } from './lesson0Comments';
-import { lesson0Statements } from './lesson0Statements';
-import { lesson0SyntaxErrors } from './lesson0SyntaxErrors';
-import { lesson0TestOutput } from './lesson0TestOutput';
-import { lesson0Return } from './lesson0Return';
-import { lesson0Function } from './lesson0Function';
-import { lesson0If } from './lesson0If';
-import { lesson0For } from './lesson0For';
-import { lessonAlgorithm } from './lessonAlgorithm';
-import { lessonOperators } from './lessonOperators';
-import { lessonProgramming } from './lessonProgramming';
-import { lessonBasics } from './lessonBasics';
-import { lessonVariables } from './lessonVariables';
-import { lessonFunctions } from './lessonFunctions';
-import { lessonArrays } from './lessonArrays';
-import { lessonObjects } from './lessonObjects';
-import { lessonStrings } from './lessonStrings';
-import { lessonGameLogic } from './lessonGameLogic';
+import { lesson1WhatIsCode } from './lesson1WhatIsCode';
+import { lesson2Algorithm } from './lesson2Algorithm';
+import { lesson3WhatIsCode } from './lesson3WhatIsCode';
+import { lesson4HowToRun } from './lesson4HowToRun';
+import { lesson5FirstCommand } from './lesson5FirstCommand';
+import { lesson6Comments } from './lesson6Comments';
+import { lesson7Statements } from './lesson7Statements';
+import { lesson8SyntaxErrors } from './lesson8SyntaxErrors';
+import { lesson9WhatIsVariable } from './lesson9WhatIsVariable';
+import { lesson10Math } from './lesson10Math';
+import { lesson11Strings } from './lesson11Strings';
+import { lesson12IfElse } from './lesson12IfElse';
+import { lesson13ForLoop } from './lesson13ForLoop';
+import { lesson14FunctionButton } from './lesson14FunctionButton';
+import { lesson15Return } from './lesson15Return';
+import { lesson16Functions } from './lesson16Functions';
+import { lesson17Arrays } from './lesson17Arrays';
+import { lesson18Objects } from './lesson18Objects';
+import { lesson19ReadingTests } from './lesson19ReadingTests';
+import { lesson20GameLogic } from './lesson20GameLogic';
 
 /**
  * Вводный курс по JavaScript.
@@ -27,28 +27,27 @@ import { lessonGameLogic } from './lessonGameLogic';
  * с автопроверкой через тест-кейсы.
  */
 export const courseLessons = [
-  lesson0Launch,
-  lesson0Console,
-  lesson0Comments,
-  lesson0Statements,
-  lesson0SyntaxErrors,
-  lesson0TestOutput,
-  lesson0Return,
-  lesson0Function,
-  lesson0If,
-  lesson0For,
-  lessonAlgorithm,
-  lessonProgramming,
-  lessonBasics,
-  lessonVariables,
-  lessonOperators,
-
-  lessonFunctions,
-  lessonArrays,
-  lessonObjects,
-  lessonStrings,
-  lessonGameLogic,
-].sort((a, b) => a.number - b.number);
+  lesson1WhatIsCode,
+  lesson2Algorithm,
+  lesson3WhatIsCode,
+  lesson4HowToRun,
+  lesson5FirstCommand,
+  lesson6Comments,
+  lesson7Statements,
+  lesson8SyntaxErrors,
+  lesson9WhatIsVariable,
+  lesson10Math,
+  lesson11Strings,
+  lesson12IfElse,
+  lesson13ForLoop,
+  lesson14FunctionButton,
+  lesson15Return,
+  lesson16Functions,
+  lesson17Arrays,
+  lesson18Objects,
+  lesson19ReadingTests,
+  lesson20GameLogic,
+];
 
 /** Общее количество уроков — используется в статистике. */
 export const TOTAL_LESSONS = courseLessons.length;
