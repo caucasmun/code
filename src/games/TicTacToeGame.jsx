@@ -19,7 +19,7 @@ const STATUS_MESSAGES = {
  * Компьютер ходит сразу после хода игрока, поэтому логике не нужно
  * ждать отдельного события «смена игрока».
  */
-export default function TicTacToeGame({ onWin, onScore, onLose }) {
+export default function TicTacToeGame({ onWin, onScore, onLose, onGameEnd }) {
   const [state, setState] = useState(() => createInitialTicTacToeState('computer'));
 
   const handleCellClick = (index) => {
@@ -38,12 +38,16 @@ export default function TicTacToeGame({ onWin, onScore, onLose }) {
         const score = next.score.X + 1;
         onWin?.(score);
         onScore?.(score);
+        onGameEnd?.('won');
       }
       // Если победил компьютер (O), onWin НЕ вызывается.
-      // Вызываем onLose, если такой проп передан.
+      // Вызываем onLose и onGameEnd со статусом 'lost'.
       else if (next.winner === 'O') {
         onLose?.();
+        onGameEnd?.('lost');
       }
+    } else if (next.status === 'draw') {
+      onGameEnd?.('draw');
     }
   };
 
@@ -53,20 +57,23 @@ export default function TicTacToeGame({ onWin, onScore, onLose }) {
 
   const isFinished = state.status !== 'playing';
 
+  // Цвет alert зависит от того, кто именно победил.
+  const isPlayerWin = state.status === 'won' && state.winner === 'X';
+  const isComputerWin = state.status === 'won' && state.winner === 'O';
+
+  const alertClass = isPlayerWin
+    ? 'alert--success'
+    : isComputerWin
+      ? 'alert--error'
+      : state.status === 'draw'
+        ? 'alert--info'
+        : '';
+
   return (
     <div className="game game--tic-tac-toe">
       <div className="game__panel">
         {isFinished ? (
-          <p
-            className={`alert ${
-              state.status === 'won'
-                ? 'alert--success'
-                : state.status === 'draw'
-                  ? 'alert--info'
-                  : 'alert--error'
-            }`}
-            role="status"
-          >
+          <p className={`alert ${alertClass}`} role="status">
             {state.status === 'won'
               ? state.winner === 'X'
                 ? 'Победа! Вы собрали линию.'

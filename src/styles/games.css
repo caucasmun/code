@@ -533,3 +533,99 @@
   cursor: default;
   opacity: 0.75;
 }
+
+/* ------------------------------------------------------------------ */
+/* Модалка результата игры «Крестики-нолики»                            */
+/* ------------------------------------------------------------------ */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}
+
+.modal__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-lg);
+  background-color: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  animation: modal-fade-in var(--transition) ease;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal__title {
+  margin: 0 0 var(--space-sm);
+  font-size: 20px;
+  color: var(--text-strong);
+}
+
+.modal__text {
+  margin: 0 0 var(--space-lg);
+  font-size: 15px;
+  color: var(--text);
+}
+
+.modal__close {
+  min-width: 120px;
+}
+
+/* Цветовые варианты модалки */
+.modal--success {
+  --modal-accent: var(--success);
+  --modal-accent-soft: var(--success-soft);
+}
+
+.modal--success .modal__content {
+  border-left: 4px solid var(--success);
+}
+
+.modal--success .modal__title {
+  color: var(--success);
+}
+
+.modal--error {
+  --modal-accent: var(--error);
+  --modal-accent-soft: var(--danger-soft);
+}
+
+.modal--error .modal__content {
+  border-left: 4px solid var(--error);
+}
+
+.modal--error .modal__title {
+  color: var(--error);
+}
+
+.modal--info {
+  --modal-accent: var(--info);
+  --modal-accent-soft: var(--info-soft);
+}
+
+.modal--info .modal__content {
+  border-left: 4px solid var(--info);
+}
+
+.modal--info .modal__title {
+  color: var(--info);
+}

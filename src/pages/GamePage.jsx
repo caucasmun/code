@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentGame } from '../features/games/gamesSlice';
@@ -61,6 +61,9 @@ export default function GamePage() {
   const tasksDone = completedTaskIds.length;
   const tasksTotal = game.tasks.length;
 
+  // Статус окончания игры: 'won' | 'lost' | 'draw' | null
+  const [gameResult, setGameResult] = useState(null);
+
   const handleWin = () => {
     reportGameCompleted(true);
   };
@@ -73,6 +76,18 @@ export default function GamePage() {
     // Поражение от компьютера — прогресс не засчитывается,
     // сообщение о поражении уже отображается на доске.
   };
+
+  const handleGameEnd = (result) => {
+    setGameResult(result);
+  };
+
+  // CSS-класс модалки в зависимости от результата игры
+  const modalClass =
+    gameResult === 'won'
+      ? 'modal--success'
+      : gameResult === 'lost'
+        ? 'modal--error'
+        : 'modal--info';
 
   return (
     <div className="game-page">
@@ -122,6 +137,7 @@ export default function GamePage() {
             onWin={handleWin}
             onScore={handleScore}
             onLose={handleLose}
+            onGameEnd={handleGameEnd}
           />
         ) : (
           <p className="alert alert--info">Игра для этого адреса пока не реализована.</p>
@@ -157,6 +173,41 @@ export default function GamePage() {
           Игра пройдена. Сыграйте ещё раз, чтобы улучшить результат: сыграно{' '}
           {gameStats.gamesPlayed}, побед {gameStats.gamesWon}, лучший счёт {gameStats.bestScore}.
         </p>
+      ) : null}
+
+      {/* Модалка с результатом игры «Крестики-нолики» */}
+      {gameResult && game.slug === 'tic-tac-toe' ? (
+        <div
+          className={`modal ${modalClass}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Результат игры"
+        >
+          <div className="modal__overlay" onClick={() => setGameResult(null)} />
+          <div className="modal__content">
+            <h2 className="modal__title">
+              {gameResult === 'won'
+                ? 'Победа!'
+                : gameResult === 'lost'
+                  ? 'Компьютер победил'
+                  : 'Ничья'}
+            </h2>
+            <p className="modal__text">
+              {gameResult === 'won'
+                ? 'Вы собрали линию.'
+                : gameResult === 'lost'
+                  ? 'Компьютер собрал линию. Вы проиграли.'
+                  : 'Поле заполнено — ничья.'}
+            </p>
+            <button
+              type="button"
+              className="button button--primary modal__close"
+              onClick={() => setGameResult(null)}
+            >
+              ОК
+            </button>
+          </div>
+        </div>
       ) : null}
     </div>
   );
