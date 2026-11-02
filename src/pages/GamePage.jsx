@@ -69,6 +69,11 @@ export default function GamePage() {
     reportScore(score);
   };
 
+  const handleLose = () => {
+    // Поражение от компьютера — прогресс не засчитывается,
+    // сообщение о поражении уже отображается на доске.
+  };
+
   return (
     <div className="game-page">
       <nav className="breadcrumbs" aria-label="Хлебные крошки">
@@ -113,7 +118,11 @@ export default function GamePage() {
           Игра
         </h2>
         {GameComponent ? (
-          <GameComponent onWin={handleWin} onScore={handleScore} />
+          <GameComponent
+            onWin={handleWin}
+            onScore={handleScore}
+            onLose={handleLose}
+          />
         ) : (
           <p className="alert alert--info">Игра для этого адреса пока не реализована.</p>
         )}

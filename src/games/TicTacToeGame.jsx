@@ -19,7 +19,7 @@ const STATUS_MESSAGES = {
  * Компьютер ходит сразу после хода игрока, поэтому логике не нужно
  * ждать отдельного события «смена игрока».
  */
-export default function TicTacToeGame({ onWin, onScore }) {
+export default function TicTacToeGame({ onWin, onScore, onLose }) {
   const [state, setState] = useState(() => createInitialTicTacToeState('computer'));
 
   const handleCellClick = (index) => {
@@ -33,9 +33,17 @@ export default function TicTacToeGame({ onWin, onScore }) {
     setState(next);
 
     if (next.status === 'won') {
-      const score = next.score.X + (next.winner === 'X' ? 1 : 0);
-      onWin?.(score);
-      onScore?.(score);
+      // Вызываем onWin только если победил игрок (X)
+      if (next.winner === 'X') {
+        const score = next.score.X + 1;
+        onWin?.(score);
+        onScore?.(score);
+      }
+      // Если победил компьютер (O), onWin НЕ вызывается.
+      // Вызываем onLose, если такой проп передан.
+      else if (next.winner === 'O') {
+        onLose?.();
+      }
     }
   };
 
@@ -59,7 +67,11 @@ export default function TicTacToeGame({ onWin, onScore }) {
             }`}
             role="status"
           >
-            {STATUS_MESSAGES[state.status]}
+            {state.status === 'won'
+              ? state.winner === 'X'
+                ? 'Победа! Вы собрали линию.'
+                : 'Компьютер собрал линию. Вы проиграли.'
+              : STATUS_MESSAGES[state.status]}
           </p>
         ) : (
           <p className="game__hint-text">
