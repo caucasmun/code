@@ -48,7 +48,7 @@ export const courseLessons = [
   lessonObjects,
   lessonStrings,
   lessonGameLogic,
-];
+].sort((a, b) => a.number - b.number);
 
 /** Общее количество уроков — используется в статистике. */
 export const TOTAL_LESSONS = courseLessons.length;
