@@ -1,15 +1,21 @@
-import { useState } from 'react';
+﻿import { useState, useEffect } from 'react';
 
 /**
- * Блок текстового теста: вопрос и кнопки с вариантами ответа.
+ * Р‘Р»РѕРє С‚РµРєСЃС‚РѕРІРѕРіРѕ С‚РµСЃС‚Р°: РІРѕРїСЂРѕСЃ Рё РєРЅРѕРїРєРё СЃ РІР°СЂРёР°РЅС‚Р°РјРё РѕС‚РІРµС‚Р°.
  *
- * @param {object} task Задание с полями type: 'text', description, options, correctOptionIndex, hints.
- * @param {boolean} [isCompleted] Отмечено ли задание как выполненное.
- * @param {function} [onSolved] Вызывается, когда выбран правильный вариант.
+ * @param {object} task Р—Р°РґР°РЅРёРµ СЃ РїРѕР»СЏРјРё type: 'text', description, options, correctOptionIndex, hints.
+ * @param {boolean} [isCompleted] РћС‚РјРµС‡РµРЅРѕ Р»Рё Р·Р°РґР°РЅРёРµ РєР°Рє РІС‹РїРѕР»РЅРµРЅРЅРѕРµ.
+ * @param {function} [onSolved] Р’С‹Р·С‹РІР°РµС‚СЃСЏ, РєРѕРіРґР° РІС‹Р±СЂР°РЅ РїСЂР°РІРёР»СЊРЅС‹Р№ РІР°СЂРёР°РЅС‚.
  */
 export default function TextTask({ task, isCompleted = false, onSolved }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [feedback, setFeedback] = useState(null); // 'correct' | 'wrong'
+  const [feedback, setFeedback] = useState(null);
+
+  // Reset state when task.id changes (e.g., when navigating between lessons)
+  useEffect(() => {
+    setSelectedIndex(null);
+    setFeedback(null);
+  }, [task.id]); // 'correct' | 'wrong'
 
   const isCorrect = selectedIndex === task.correctOptionIndex;
 
@@ -31,7 +37,7 @@ export default function TextTask({ task, isCompleted = false, onSolved }) {
 
         {task.criteria ? (
           <p className="practice__criteria">
-            <strong>Критерий: </strong>
+            <strong>РљСЂРёС‚РµСЂРёР№: </strong>
             {task.criteria}
           </p>
         ) : null}
@@ -46,7 +52,7 @@ export default function TextTask({ task, isCompleted = false, onSolved }) {
               {feedback === 'correct' ? 'Верно! 🎉' : 'Неправильно, попробуйте ещё раз.'}
             </p>
             {feedback === 'wrong' && task.hints && task.hints.length > 0 ? (
-              <p className="feedback__text">Подсказка: {task.hints[0]}</p>
+              <p className="feedback__text">РџРѕРґСЃРєР°Р·РєР°: {task.hints[0]}</p>
             ) : null}
           </div>
         )}
@@ -58,13 +64,17 @@ export default function TextTask({ task, isCompleted = false, onSolved }) {
             key={index}
             type="button"
             className={`task-option-btn ${
-              selectedIndex !== null
+              isCompleted
                 ? index === task.correctOptionIndex
                   ? 'correct'
-                  : index === selectedIndex
-                    ? 'incorrect'
-                    : ''
-                : ''
+                  : ''
+                : selectedIndex !== null
+                  ? index === task.correctOptionIndex
+                    ? 'correct'
+                    : index === selectedIndex
+                      ? 'incorrect'
+                      : ''
+                  : ''
             }`}
             onClick={() => handleOptionClick(index)}
             disabled={selectedIndex !== null || isCompleted}
@@ -78,3 +88,4 @@ export default function TextTask({ task, isCompleted = false, onSolved }) {
     </div>
   );
 }
+

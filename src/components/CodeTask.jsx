@@ -73,7 +73,7 @@ export default function CodeTask({ task, isCompleted = false, onSolved }) {
             type="button"
             className="button button--ghost"
             onClick={handleRun}
-            disabled={isRunning}
+            disabled={isRunning || isCompleted}
           >
             {isRunning ? 'Выполняем…' : 'Запустить'}
           </button>
@@ -82,7 +82,7 @@ export default function CodeTask({ task, isCompleted = false, onSolved }) {
             type="button"
             className="button button--primary"
             onClick={handleCheck}
-            disabled={isChecking}
+            disabled={isChecking || isCompleted}
           >
             {isChecking ? 'Проверяем…' : 'Проверить'}
           </button>
@@ -91,7 +91,7 @@ export default function CodeTask({ task, isCompleted = false, onSolved }) {
             type="button"
             className="button button--ghost"
             onClick={handleReset}
-            disabled={isChecking || isRunning}
+            disabled={isChecking || isRunning || isCompleted}
           >
             Сбросить
           </button>

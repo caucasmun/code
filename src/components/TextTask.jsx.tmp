@@ -1,0 +1,86 @@
+﻿import { useState, useEffect } from 'react';
+
+/**
+ * Р‘Р»РѕРє С‚РµРєСЃС‚РѕРІРѕРіРѕ С‚РµСЃС‚Р°: РІРѕРїСЂРѕСЃ Рё РєРЅРѕРїРєРё СЃ РІР°СЂРёР°РЅС‚Р°РјРё РѕС‚РІРµС‚Р°.
+ *
+ * @param {object} task Р—Р°РґР°РЅРёРµ СЃ РїРѕР»СЏРјРё type: 'text', description, options, correctOptionIndex, hints.
+ * @param {boolean} [isCompleted] РћС‚РјРµС‡РµРЅРѕ Р»Рё Р·Р°РґР°РЅРёРµ РєР°Рє РІС‹РїРѕР»РЅРµРЅРЅРѕРµ.
+ * @param {function} [onSolved] Р’С‹Р·С‹РІР°РµС‚СЃСЏ, РєРѕРіРґР° РІС‹Р±СЂР°РЅ РїСЂР°РІРёР»СЊРЅС‹Р№ РІР°СЂРёР°РЅС‚.
+ */
+export default function TextTask({ task, isCompleted = false, onSolved }) {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [feedback, setFeedback] = useState(null);
+
+  // Reset state when task.id changes (e.g., when navigating between lessons)
+  useEffect(() => {
+    setSelectedIndex(null);
+    setFeedback(null);
+  }, [task.id]); // 'correct' | 'wrong'
+
+  const isCorrect = selectedIndex === task.correctOptionIndex;
+
+  const handleOptionClick = (index) => {
+    setSelectedIndex(index);
+    if (index === task.correctOptionIndex) {
+      setFeedback('correct');
+      if (onSolved) onSolved(task.id);
+    } else {
+      setFeedback('wrong');
+    }
+  };
+
+  return (
+    <div className="practice text-task">
+      <div className="practice__description">
+        <h4 className="practice__title">{task.title}</h4>
+        <p className="practice__text">{task.description}</p>
+
+        {task.criteria ? (
+          <p className="practice__criteria">
+            <strong>РљСЂРёС‚РµСЂРёР№: </strong>
+            {task.criteria}
+          </p>
+        ) : null}
+
+        {feedback && (
+          <div
+            className={`feedback ${feedback === 'correct' ? 'feedback--success' : 'feedback--error'}`}
+            role="status"
+            aria-live="polite"
+          >
+            <p className="feedback__title">
+              {feedback === 'correct' ? 'Р’РµСЂРЅРѕ! рџЋ‰' : 'РќРµРїСЂР°РІРёР»СЊРЅРѕ, РїРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·.'}
+            </p>
+            {feedback === 'wrong' && task.hints && task.hints.length > 0 ? (
+              <p className="feedback__text">РџРѕРґСЃРєР°Р·РєР°: {task.hints[0]}</p>
+            ) : null}
+          </div>
+        )}
+      </div>
+
+      <div className="task-options">
+        {task.options.map((option, index) => (
+          <button
+            key={index}
+            type="button"
+            className={`task-option-btn ${
+              selectedIndex !== null
+                ? index === task.correctOptionIndex
+                  ? 'correct'
+                  : index === selectedIndex
+                    ? 'incorrect'
+                    : ''
+                : ''
+            }`}
+            onClick={() => handleOptionClick(index)}
+            disabled={selectedIndex !== null || isCompleted}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+
+      {isCompleted ? <span className="badge badge--success">Р’С‹РїРѕР»РЅРµРЅРѕ</span> : null}
+    </div>
+  );
+}

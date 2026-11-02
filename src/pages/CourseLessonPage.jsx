@@ -32,6 +32,11 @@ export default function CourseLessonPage() {
     document.title = lesson ? `${lesson.title} — Курс JavaScript` : 'Урок не найден — Код в игре';
   }, [lesson]);
 
+  // Скролл вверх при смене урока
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   if (!lesson) {
     return (
       <div className="course-page">
@@ -122,7 +127,7 @@ export default function CourseLessonPage() {
 
         {lesson.practice.map((task) => (
           <PracticeBlock
-            key={task.id}
+            key={`${lesson.slug}-${task.id}`}
             task={task}
             isCompleted={isTaskCompleted(task.id)}
             onSolved={() => {
