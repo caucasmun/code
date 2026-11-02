@@ -43,9 +43,16 @@ export default function HomePage() {
           Изучите его с нуля на практике — прямо в браузере, без установки программ.
         </p>
         <div className="hero__actions">
-          <a href="#catalog" className="button button--primary">
+          <button
+            type="button"
+            className="button button--primary"
+            onClick={() => {
+              const el = document.getElementById('catalog');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             Выбрать игру
-          </a>
+          </button>
           {!user ? (
             <Link to="/register" className="button button--ghost">
               Создать аккаунт
